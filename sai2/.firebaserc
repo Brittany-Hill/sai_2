@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "capstone-sai2": {
+      "hosting": {
+        "sai2": [
+          "capstone-sai2"
+        ]
+      }
+    }
+  }
+}
