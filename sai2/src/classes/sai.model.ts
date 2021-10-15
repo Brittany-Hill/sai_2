@@ -1,4 +1,4 @@
-export class SaiClass {
+export class Sai {
     private className: string;
     private classID: number;
     private completion: boolean;

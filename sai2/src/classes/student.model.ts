@@ -1,7 +1,6 @@
 import { EmailValidator } from "@angular/forms";
-import { Sai } from "src/interface/sai.model";
-
-export class StudentClass {
+import { Sai } from "src/classes/sai.model";
+export class Student {
     private id: string;
     private firstName: string;
     private lastName: string;

@@ -8,6 +8,5 @@ export const environment = {
     storageBucket: "capstone-sai2.appspot.com",
     messagingSenderId: "1038726365527",
     appId: "1:1038726365527:web:7a0a309f99d1bcce82be12",
-    measurementId: "G-H4EY4ZJDZB"
   }
 };
