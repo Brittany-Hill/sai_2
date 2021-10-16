@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/classes/student.model';
 import { StudentService } from 'src/services/student.service';
 import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { studentInterface } from '../interfaces/studentInterface';
 
 @Component({
   selector: 'app-test-database',
@@ -9,14 +11,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./test-database.component.css']
 })
 export class TestDatabaseComponent implements OnInit {
-
   public holder!: Observable<Student[]>;
-  constructor(public studentService: StudentService){
-
-  };
+  constructor(public studentService: StudentService){};
 
   ngOnInit(): void {
-    this.holder = this.studentService.getAllStudents();
+    this.studentService.student$.subscribe( stud => {
+      this.holder = this.studentService.getAllStudents();
+    }
+    )
   }
 
 }

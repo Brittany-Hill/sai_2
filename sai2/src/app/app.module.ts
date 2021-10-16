@@ -13,7 +13,7 @@ import { TestDatabaseComponent } from './test-database/test-database.component';
   declarations: [
     AppComponent,
     TestDatabaseComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

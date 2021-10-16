@@ -1,1 +1,8 @@
 <p>Test</p>
+<tbody>
+    <tr *ngFor="let student of holder | async">
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+
+    </tr>
+</tbody>
