@@ -8,11 +8,15 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { AngularFireModule } from '@angular/fire/compat';
 import { TestDatabaseComponent } from './test-database/test-database.component';
+import { SignedinPageComponent } from './signedin-page/signedin-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestDatabaseComponent
+    TestDatabaseComponent,
+    SignedinPageComponent,
+    NavbarComponent
     ],
   imports: [
     BrowserModule,
