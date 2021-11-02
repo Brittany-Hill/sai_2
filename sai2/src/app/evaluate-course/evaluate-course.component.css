@@ -1,0 +1,22 @@
+.header {
+    background-color: #d0dbe2;
+    padding: 1em;
+}
+
+.card-div {
+    background-color: #d0dbe2;
+}
+
+.card {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.btn {
+    margin-right: 1em;
+}
+
+#submit {
+    margin: 1em;
+}

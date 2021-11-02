@@ -10,13 +10,17 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { TestDatabaseComponent } from './test-database/test-database.component';
 import { SignedinPageComponent } from './signedin-page/signedin-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { EvaluateCourseComponent } from './evaluate-course/evaluate-course.component';
+import { EvaluateFacilityComponent } from './evaluate-facility/evaluate-facility.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestDatabaseComponent,
     SignedinPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    EvaluateCourseComponent,
+    EvaluateFacilityComponent
     ],
   imports: [
     BrowserModule,

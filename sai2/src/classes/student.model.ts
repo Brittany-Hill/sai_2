@@ -13,6 +13,7 @@ export class Student implements studentInterface{
     lastName: string;
     email: string;
     sai: Sai;
+    
     getName(): string{
         return `${this.firstName} ${this.lastName}`;
     }

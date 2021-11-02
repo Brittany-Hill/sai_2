@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-signedin-page',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignedinPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
+    this.db.collection('student').valueChanges().subscribe(val => console.log(val));
   }
 
 }
