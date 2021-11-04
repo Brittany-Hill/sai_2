@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test-karma": "ng run sai2:karma",
-    "test": "ng test"
+    "test": "ng test || npm run test-karma"
   },
   "private": true,
   "dependencies": {
