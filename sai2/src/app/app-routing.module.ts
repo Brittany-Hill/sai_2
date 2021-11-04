@@ -1,8 +1,12 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TestDatabaseComponent } from './test-database/test-database.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
 const routes: Routes = [
-  {path:'', redirectTo: 'test', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: LandingPageComponent},
   {path: 'test', component: TestDatabaseComponent}
 ];
 

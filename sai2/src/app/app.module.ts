@@ -8,12 +8,16 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { AngularFireModule } from '@angular/fire/compat';
 import { TestDatabaseComponent } from './test-database/test-database.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestDatabaseComponent
-    ],
+    TestDatabaseComponent,
+    ToolbarComponent,
+    LandingPageComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
