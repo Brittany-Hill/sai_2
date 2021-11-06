@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -28,6 +28,8 @@ import { EvaluateFacilityComponent } from './evaluate-facility/evaluate-facility
     AppRoutingModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig) // Your config
   ],
   providers: [],

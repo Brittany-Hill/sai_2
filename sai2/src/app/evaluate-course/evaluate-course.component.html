@@ -1,6 +1,8 @@
 <div class="header">
     <h1>Evaluate Course</h1>
-  </div>
+</div>
+<div>
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
   <div class="card-div">
     <div class="card">
         <div class="card-header">
@@ -11,23 +13,23 @@
                 <label for="formGroupExampleInput" class="form-label">What do you anticipate your grade will be?</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption1" id="radioA-1" value="option1">
+                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioA-1" value="A">
                 <label class="form-check-label" for="radioA-1">A</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption1" id="radioB-1" value="option2">
+                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioB-1" value="B">
                 <label class="form-check-label" for="radioB-1">B</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption1" id="radioC-1" value="option3">
+                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioC-1" value="C">
                 <label class="form-check-label" for="radioC-1">C</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption1" id="radioD-1" value="option4">
+                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioD-1" value="D">
                 <label class="form-check-label" for="radioD-1">D</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption1" id="radioF-1" value="option5">
+                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioF-1" value="F">
                 <label class="form-check-label" for="radioF-1">F</label>
               </div>
         </div>
@@ -41,23 +43,23 @@
                 <label for="formGroupExampleInput" class="form-label">The learning environment was good enough to help me understand the material.</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption2" id="radioStronglyAgree" value="option1">
+                <input class="form-check-input" type="radio" formControlName="learning" id="radioStronglyAgree" value="strongAgree" >
                 <label class="form-check-label" for="radioStronglyAgree">Strongly Agree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption2" id="radioAgree" value="option2">
+                <input class="form-check-input" type="radio" formControlName="learning" id="radioAgree" value="agree">
                 <label class="form-check-label" for="radioAgree">Agree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption2" id="radioNeutral" value="option3">
+                <input class="form-check-input" type="radio" formControlName="learning" id="radioNeutral" value="neurtal">
                 <label class="form-check-label" for="radioNeutral">Neutral</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption2" id="radioDisagree" value="option4">
+                <input class="form-check-input" type="radio" formControlName="learning" id="radioDisagree" value="disagree">
                 <label class="form-check-label" for="radioDisagree">Disagree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption2" id="radioStronglyDisagree" value="option5">
+                <input class="form-check-input" type="radio" formControlName="learning" id="radioStronglyDisagree" value="strongDisagree">
                 <label class="form-check-label" for="radioStronglyDisagree">Strongly Disagree</label>
               </div>
         </div>
@@ -71,23 +73,23 @@
                 <label for="formGroupExampleInput" class="form-label">The professor graded material in a timely manner.</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption3" id="radioStronglyAgree" value="option1">
+                <input class="form-check-input" type="radio" formControlName="grading" id="radioStronglyAgree" value="strongAgree" >
                 <label class="form-check-label" for="radioStronglyAgree">Strongly Agree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption3" id="radioAgree" value="option2">
+                <input class="form-check-input" type="radio" formControlName="grading" id="radioAgree" value="agree" >
                 <label class="form-check-label" for="radioAgree">Agree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption3" id="radioNeutral" value="option3">
+                <input class="form-check-input" type="radio" formControlName="grading" id="radioNeutral" value="neurtal" >
                 <label class="form-check-label" for="radioNeutral">Neutral</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption3" id="radioDisagree" value="option4">
+                <input class="form-check-input" type="radio" formControlName="grading" id="radioDisagree" value="disagree" >
                 <label class="form-check-label" for="radioDisagree">Disagree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption3" id="radioStronglyDisagree" value="option5">
+                <input class="form-check-input" type="radio" formControlName="grading" id="radioStronglyDisagree" value="strongDisagree" >
                 <label class="form-check-label" for="radioStronglyDisagree">Strongly Disagree</label>
               </div>
         </div>
@@ -101,23 +103,23 @@
                 <label for="formGroupExampleInput" class="form-label">The professor was helpful and understanding of students' questions and concerns.</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption4" id="radioStronglyAgree" value="option1">
+                <input class="form-check-input" type="radio" formControlName="helpful" id="radioStronglyAgree" value="strongAgree" >
                 <label class="form-check-label" for="radioStronglyAgree">Strongly Agree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption4" id="radioAgree" value="option2">
+                <input class="form-check-input" type="radio" formControlName="helpful" id="radioAgree" value="agree" >
                 <label class="form-check-label" for="radioAgree">Agree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption4" id="radioNeutral" value="option3">
+                <input class="form-check-input" type="radio" formControlName="helpful" id="radioNeutral" value="neurtal" >
                 <label class="form-check-label" for="radioNeutral">Neutral</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption4" id="radioDisagree" value="option4">
+                <input class="form-check-input" type="radio" formControlName="helpful" id="radioDisagree" value="disagree" >
                 <label class="form-check-label" for="radioDisagree">Disagree</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption4" id="radioStronglyDisagree" value="option5">
+                <input class="form-check-input" type="radio" formControlName="helpful" id="radioStronglyDisagree" value="strongDisagree" >
                 <label class="form-check-label" for="radioStronglyDisagree">Strongly Disagree</label>
               </div>
         </div>
@@ -131,13 +133,15 @@
                 <label for="formGroupExampleInput" class="form-label">Please provide any additional comments about the professor or learning environment to help us get a better evaluation of this course.</label>
             </div>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="feedback" style="height: 100px" formControlName="feedback"></textarea>
                 <label for="floatingTextarea2">Type your comment here</label>
               </div>
         </div>
     </div>
     <div id="submit">
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
+  </form>
+</div>
 

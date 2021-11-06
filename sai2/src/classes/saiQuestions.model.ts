@@ -1,45 +1,23 @@
-import { Sai } from "src/classes/sai.model";
-import { SaiQuestionsInterface } from "src/app/interfaces/saiQuestions-interface";
 
-export class saiQuestions implements SaiQuestionsInterface{
+export class saiQuestions{
     
-    constructor( question1:string, question2: string, question3: string, question4: string, question5: string, question6: string){
-        this.question1 = question1;
-        this.question2 = question2;
-        this.question3 = question3;
-        this.question4 = question4;
-        this.question5 = question5;
-        this.question6 = question6;
-    }
-    question1: string;
-    question2: string;
-    question3: string;
-    question4: string;
-    question5: string;
-    question6: string;
+    public studentsID: number;
+    public completed: boolean;
+    public classID: number;
+    public question1: string;
+    public question2: string;
+    public question3: string;
+    public question4: string;
+    public question5: string;
 
-    getQuestion1(): string {
-        return `${this.question1}`;
+    constructor(saiObj: { studentsID: number; classID: number; completed: boolean; question1: string; question2: string; question3: string; question4: string; question5: string; } ){
+        this.studentsID = saiObj.studentsID || 0;
+        this.classID = saiObj.classID || 0;
+        this.completed = saiObj.completed || false;
+        this.question1 = saiObj.question1 || '';
+        this.question2 = saiObj.question2 || '';
+        this.question3 = saiObj.question3 || '';
+        this.question4 = saiObj.question4 || '';
+        this.question5 = saiObj.question5 || '';
     }
-
-    getQuestion2(): string {
-        return `${this.question2}`;
-    }
-
-    getQuestion3(): string {
-        return `${this.question3}`;
-    }
-
-    getQuestion4(): string {
-        return `${this.question4}`;
-    }
-
-    getQuestion5(): string {
-        return `${this.question5}`;
-    }
-    
-    getQuestion6(): string {
-        return `${this.question6}`;
-    }
-    
 }
