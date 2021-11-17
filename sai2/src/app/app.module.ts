@@ -12,6 +12,7 @@ import { SignedinPageComponent } from './signedin-page/signedin-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EvaluateCourseComponent } from './evaluate-course/evaluate-course.component';
 import { EvaluateFacilityComponent } from './evaluate-facility/evaluate-facility.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EvaluateFacilityComponent } from './evaluate-facility/evaluate-facility
     SignedinPageComponent,
     NavbarComponent,
     EvaluateCourseComponent,
-    EvaluateFacilityComponent
+    EvaluateFacilityComponent,
+    LandingpageComponent
     ],
   imports: [
     BrowserModule,

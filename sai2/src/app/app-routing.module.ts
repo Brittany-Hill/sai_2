@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'signedin-page', component: SignedinPageComponent},
   {path: 'evaluate-course', component: EvaluateCourseComponent},
   {path: 'evaluate-facility', component: EvaluateFacilityComponent},
-  {path: '**', redirectTo: 'signedin-page'}
+  {path: '**', redirectTo: 'landingpage'}
 ];
 
 @NgModule({
