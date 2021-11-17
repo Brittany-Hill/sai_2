@@ -19,8 +19,8 @@ export class Student implements studentInterface{
     getEmail(): string{
         return `${this.email}`;
     }
-    //getSai(): Sai{
-    //    return 0;
-   // }
+    getSai(): Sai{
+        return this.sai;
+   }
     
 }
