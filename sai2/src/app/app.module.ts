@@ -10,13 +10,19 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { TestDatabaseComponent } from './test-database/test-database.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { TeacherViewComponent } from './teacher-view/teacher-view.component';
+import { TeacherSaiViewComponent } from './teacher-sai-view/teacher-sai-view.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatGridListModule} from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
     AppComponent,
     TestDatabaseComponent,
     ToolbarComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    TeacherViewComponent,
+    TeacherSaiViewComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppRoutingModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig) // Your config
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatGridListModule,
+    NoopAnimationsModule // Your config
   ],
   providers: [],
   bootstrap: [AppComponent]
