@@ -27,7 +27,7 @@ export class UserService {
         switchMap(user => {
             // Logged in
           if (user) {
-            return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+            return this.afs.doc<User>(`users/${user.email}`).valueChanges();
           } else {
             // Logged out
             return of(null);
@@ -46,11 +46,11 @@ export class UserService {
   /** Signs the user out of Google */
   async signOut() {
     await this.afAuth.signOut();
-    this.router.navigate(['/']);
+    this.router.navigate(['/landingpage']);
   }
   private updateUserData(user: { additionalUserInfo?: firebase.auth.AdditionalUserInfo | null | undefined; credential?: firebase.auth.AuthCredential | null; operationType?: string | null | undefined; user?: firebase.User | null; uid?: any; email?: any; displayName?: any; }) {
     // Sets user data to firestore on login
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.email}`);
 
     return userRef.set({
       uid: user.uid,

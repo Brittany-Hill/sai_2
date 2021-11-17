@@ -19,7 +19,7 @@ export class LandingpageComponent implements OnInit {
   ngOnInit(): void {
     this.userSubscription = this.userService.user$.subscribe( user => {
       if (user) {
-        this.router.navigate(['/signedin']);
+        this.router.navigate(['signedin']);
       }
     });
   }
