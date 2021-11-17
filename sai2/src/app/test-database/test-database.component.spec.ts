@@ -1,10 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StudentService } from 'src/services/student.service';
 
 import { TestDatabaseComponent } from './test-database.component';
 
 describe('TestDatabaseComponent', () => {
   let component: TestDatabaseComponent;
   let fixture: ComponentFixture<TestDatabaseComponent>;
+  let studentService: StudentService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
