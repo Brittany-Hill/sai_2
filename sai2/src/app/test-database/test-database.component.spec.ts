@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 import { StudentService } from 'src/services/student.service';
 
 import { TestDatabaseComponent } from './test-database.component';
@@ -10,7 +12,12 @@ describe('TestDatabaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TestDatabaseComponent ]
+      imports:[
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireModule
+      ],
+      declarations: [ TestDatabaseComponent ],
+      providers: [StudentService]
     })
     .compileComponents();
   });

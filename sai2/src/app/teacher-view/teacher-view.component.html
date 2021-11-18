@@ -1,24 +1,4 @@
-<div class="card-div">
-    <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">CEN3031 Software Engineering I</h5>
-          <p class="card-text">Number of students : 20</p>
-          <a href="/teacher-sai-view" class="btn btn-primary">Student feedback</a>
-        </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">COT 3100 Discrete Structures</h5>
-        <p class="card-text">Number of students : 35</p>
-        <a href="/teacher-sai-view" class="btn btn-primary">Student feedback</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">COP4864 Client-Side Programming</h5>
-        <p class="card-text">Number of students : 35</p>
-        <a href="/teacher-sai-view" class="btn btn-primary" >Student feedback</a>
-      </div>
-    </div>
+<div id="cards" *ngFor="let course of courses">
+  <app-teacher-view-card [course]="course"></app-teacher-view-card> 
 </div>
 
