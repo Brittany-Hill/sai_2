@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { EvaluateCourseComponent } from './evaluate-course/evaluate-course.component';
 import { EvaluateFacilityComponent } from './evaluate-facility/evaluate-facility.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { SigninpageComponent } from './signinpage/signinpage.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     NavbarComponent,
     EvaluateCourseComponent,
     EvaluateFacilityComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    SigninpageComponent
     ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { AuthenticationService } from 'src/services/auth.service';
 import { UserService } from 'src/services/user-service.service';
 
 @Component({
@@ -10,18 +11,12 @@ import { UserService } from 'src/services/user-service.service';
 })
 export class LandingpageComponent implements OnInit {
 
-  private userSubscription!: Subscription;
   
-  constructor(public userService: UserService, private router: Router) { }
+  constructor(public userService: UserService, private router: Router,public authService: AuthenticationService) { }
   ngOnDestroy(): void {
-    this.userSubscription.unsubscribe();
   }
   ngOnInit(): void {
-    this.userSubscription = this.userService.user$.subscribe( user => {
-      if (user) {
-        this.router.navigate(['signedin']);
-      }
-    });
+    this.authService.afAuth.signOut();
   }
 
 }

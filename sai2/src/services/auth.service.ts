@@ -1,26 +1,52 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { Router } from '@angular/router';
 
-import { UserService} from './user-service.service'
-import { Observable } from 'rxjs';
-import { tap, map, take } from 'rxjs/operators';
+@Injectable({
+  providedIn: 'root'
+})
 
-@Injectable()
-export class AuthGuard implements CanActivate {
-  constructor(private userService: UserService, private router: Router) {}
+export class AuthenticationService {
 
-  /** Lets the router know whether the user can visit the route */
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-
-      return this.userService.user$.pipe(
-           take(1),
-           map(user => !!user), // <-- map to boolean
-           tap(loggedIn => {
-             if (!loggedIn) {
-               console.log('access denied');
-               this.router.navigate(['/']);
-             }
-         })
-    );
+  authState: any = null;
+  constructor(
+    public afAuth: AngularFireAuth, // Inject Firebase auth service
+    public router: Router
+    ) { 
+      this.afAuth.authState.subscribe((auth) => {
+        this.authState = auth
+      });
   }
+
+  get currentUserId(): string {
+    return (this.authState !== null) ? this.authState.uid : ''
+  }
+  get currentEmail(): string {
+    return this.authState['email']
+  }
+  
+  loginWithEmail(email: string, password: string) {
+    return this.afAuth.signInWithEmailAndPassword(email, password)
+      .then((user) => {
+        this.authState = user
+      })
+      .catch(error => {
+        console.log(error)
+        throw error
+      });
+  }
+
+  signOut(): void {
+    this.afAuth.signOut();
+    this.router.navigate(['/'])
+  }
+
+  get isUserEmailLoggedIn(): boolean {
+    if ((this.authState !== null) ) {
+      return true
+    } else {
+      return false
+    }
+  }
+  
 }
