@@ -7,14 +7,14 @@ import { SignedinPageComponent } from './signedin-page/signedin-page.component';
 import { TestDatabaseComponent } from './test-database/test-database.component';
 import { SigninpageComponent } from './signinpage/signinpage.component';
 const routes: Routes = [
-  //{path:'', redirectTo: 'test', pathMatch: 'full'},
+  {path:'', redirectTo: 'landingpage', pathMatch: 'full'},
   {path: 'test', component: TestDatabaseComponent},
   {path: 'signedin', component: SignedinPageComponent},
   {path: 'evaluate-course', component: EvaluateCourseComponent},
   {path: 'evaluate-facility', component: EvaluateFacilityComponent},
   {path: 'landingpage', component: LandingpageComponent},
   {path: '*/*', redirectTo: 'landingpage'},
-  {path: 'signinpage', component: SigninpageComponent}
+  {path: 'signinpage', component: SigninpageComponent},
 ];
 
 @NgModule({

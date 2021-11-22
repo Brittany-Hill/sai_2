@@ -3,13 +3,17 @@ import { FormControl, FormGroup, ReactiveFormsModule  } from '@angular/forms';
 import { saiQuestions } from 'src/classes/saiQuestions.model';
 import { SaiQuestionsService } from 'src/services/sai-questions.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/services/auth.service';
 @Component({
   selector: 'app-evaluate-course',
   templateUrl: './evaluate-course.component.html',
   styleUrls: ['./evaluate-course.component.css']
 })
 export class EvaluateCourseComponent implements OnInit {
-  constructor(public saiQuestionsService: SaiQuestionsService, public router: Router) { }
+  constructor(public saiQuestionsService: SaiQuestionsService, 
+              public router: Router,
+              public authService: AuthenticationService) {
+              }
 
    courseForm: FormGroup= new FormGroup({
     anticipated: new FormControl(null),
@@ -20,7 +24,11 @@ export class EvaluateCourseComponent implements OnInit {
   })
 
   ngOnInit(): void {
-    
+    if(this.authService.isUserEmailLoggedIn)
+    {}
+    else{
+      this.router.navigate(["/"]);
+    }
   }
   onSubmit(): void{
     var tempSai = new saiQuestions({
@@ -35,6 +43,6 @@ export class EvaluateCourseComponent implements OnInit {
     }
     )
     this.saiQuestionsService.createNewAnswers(tempSai);
-    this.router.navigate(["/signedin-page"])
+    this.router.navigate(["/signedin"])
   }
 }
