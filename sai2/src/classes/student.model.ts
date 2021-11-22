@@ -1,26 +1,27 @@
 import { EmailValidator } from "@angular/forms";
-import { Sai } from "src/classes/sai.model";
 import { studentInterface } from "src/app/interfaces/studentInterface";
+import { saiQuestions } from "./saiQuestions.model";
 export class Student implements studentInterface{
     
-    constructor( firstName:string, lastName: string, email:string, sai: Sai){
+    constructor( firstName:string, lastName: string, email:string, classes: Array<string>){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.sai = sai;
+        this.classes = classes;
     }
     firstName: string;
     lastName: string;
     email: string;
-    sai: Sai;
+    classes: Array<string>;
+    
     getName(): string{
         return `${this.firstName} ${this.lastName}`;
     }
     getEmail(): string{
         return `${this.email}`;
     }
-    //getSai(): Sai{
-    //    return 0;
-   // }
-    
+    getClasses(){
+        return this.classes;
+    }
+
 }

@@ -12,7 +12,9 @@ export class StudentService {
   public student$: Observable<Student[]>;
   public studentCollectionRef;
 
-  constructor( private firestore: AngularFirestore) {
+  constructor( 
+    private firestore: AngularFirestore
+    ) {
     this.studentCollectionRef = this.firestore.collection<Student>('student');
     this.student$ = this.studentCollectionRef.valueChanges();
    }
