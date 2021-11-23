@@ -23,9 +23,5 @@ export class Student implements studentInterface{
     getClasses(){
         return this.classes;
     }
-
-    getSai(): Sai{
-        return this.sai;
-   }
     
 }
