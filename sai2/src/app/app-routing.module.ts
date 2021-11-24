@@ -6,12 +6,14 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SignedinPageComponent } from './signedin-page/signedin-page.component';
 import { TestDatabaseComponent } from './test-database/test-database.component';
 import { SigninpageComponent } from './signinpage/signinpage.component';
+import { UserService } from 'src/services/user-service.service';
+import { AuthenticationService } from 'src/services/auth.service';
 const routes: Routes = [
-  {path:'', redirectTo: 'landingpage', pathMatch: 'full'},
+  {path: '', redirectTo: 'landingpage', pathMatch: 'full'},
   {path: 'test', component: TestDatabaseComponent},
-  {path: 'signedin', component: SignedinPageComponent},
-  {path: 'evaluate-course', component: EvaluateCourseComponent},
-  {path: 'evaluate-facility', component: EvaluateFacilityComponent},
+  {path: 'signedin', component: SignedinPageComponent, canActivate: [AuthenticationService]},
+  {path: 'evaluate-course', component: EvaluateCourseComponent, canActivate: [AuthenticationService]},
+  {path: 'evaluate-facility', component: EvaluateFacilityComponent,canActivate: [AuthenticationService]},
   {path: 'landingpage', component: LandingpageComponent},
   {path: '*/*', redirectTo: 'landingpage'},
   {path: 'signinpage', component: SigninpageComponent},

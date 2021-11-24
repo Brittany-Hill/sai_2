@@ -8,4 +8,6 @@ export interface SaiQuestionsInterface {
     question3: string;
     question4: string;
     question5: string;
+    question6: string;
+    question7: string;
 }

@@ -16,30 +16,31 @@ export class EvaluateCourseComponent implements OnInit {
               }
 
    courseForm: FormGroup= new FormGroup({
-    anticipated: new FormControl(null),
-    learning: new FormControl(null),
-    grading: new FormControl(null),
-    helpful: new FormControl(null),
-    feedback: new FormControl(null)
+    question1: new FormControl(null),
+    question2: new FormControl(null),
+    question3: new FormControl(null),
+    question4: new FormControl(null),
+    question5: new FormControl(null),
+    question6: new FormControl(null),
+    question7: new FormControl(null),
+
   })
 
   ngOnInit(): void {
-    if(this.authService.isUserEmailLoggedIn)
-    {}
-    else{
-      this.router.navigate(["/"]);
-    }
+
   }
   onSubmit(): void{
     var tempSai = new saiQuestions({
       studentsID: 96019,
       classID:2050,
       completed: true,
-      question1: this.courseForm.get("anticipated")?.value,
-      question2: this.courseForm.get("learning")?.value,
-      question3: this.courseForm.get("grading")?.value,
-      question4: this.courseForm.get("helpful")?.value,
-      question5: this.courseForm.get("feedback")?.value
+      question1: this.courseForm.get("question1")?.value,
+      question2: this.courseForm.get("question2")?.value,
+      question3: this.courseForm.get("question3")?.value,
+      question4: this.courseForm.get("question4")?.value,
+      question5: this.courseForm.get("question5")?.value,
+      question6: this.courseForm.get("question6")?.value,
+      question7: this.courseForm.get("question7")?.value,
     }
     )
     this.saiQuestionsService.createNewAnswers(tempSai);

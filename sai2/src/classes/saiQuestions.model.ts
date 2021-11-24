@@ -9,8 +9,10 @@ export class saiQuestions{
     public question3: string;
     public question4: string;
     public question5: string;
+    public question6: string;
+    public question7: string;
 
-    constructor(saiObj: { studentsID: number; classID: number; completed: boolean; question1: string; question2: string; question3: string; question4: string; question5: string; } ){
+    constructor(saiObj: { studentsID: number; classID: number; completed: boolean; question1: string; question2: string; question3: string; question4: string; question5: string; question6: string, question7: string } ){
         this.studentsID = saiObj.studentsID || 0;
         this.classID = saiObj.classID || 0;
         this.completed = saiObj.completed || false;
@@ -19,5 +21,7 @@ export class saiQuestions{
         this.question3 = saiObj.question3 || '';
         this.question4 = saiObj.question4 || '';
         this.question5 = saiObj.question5 || '';
+        this.question6 = saiObj.question6 || '';
+        this.question7 = saiObj.question7 || '';
     }
 }

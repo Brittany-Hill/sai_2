@@ -20,15 +20,15 @@ export class SignedinPageComponent implements OnInit {
               public router: Router) { }
 
   ngOnInit(): void {
-    if(this.authService.isUserEmailLoggedIn){
+    // if(this.authService.isUserEmailLoggedIn){
     this.db.collection('student').valueChanges().subscribe(val => console.log(val));
     this.studentService.student$.subscribe( stud => {
       this.holder = this.studentService.getAllStudents();
     }
     )
-  }else{
-    this.router.navigate(["/landingpage"])
-  }
+  // }else{
+  //   this.router.navigate(["/landingpage"])
+  // }
   }
   ngOnDestroy(): void {
   }

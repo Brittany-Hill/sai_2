@@ -3,7 +3,7 @@ export class User {
     email: string;
     displayName?: string;
 
-    constructor(userObj: { uid: string; email: string; displayName: string | undefined; } ) {
+    constructor(userObj: any ) {
         this.uid = userObj.uid;
         this.email = userObj.email;
         this.displayName = userObj.displayName;
