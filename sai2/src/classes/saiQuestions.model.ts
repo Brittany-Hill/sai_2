@@ -1,7 +1,7 @@
 
 export class saiQuestions{
     
-    public studentsID: number;
+    public studentsID: any;
     public completed: boolean;
     public classID: number;
     public question1: string;
@@ -12,8 +12,8 @@ export class saiQuestions{
     public question6: string;
     public question7: string;
 
-    constructor(saiObj: { studentsID: number; classID: number; completed: boolean; question1: string; question2: string; question3: string; question4: string; question5: string; question6: string, question7: string } ){
-        this.studentsID = saiObj.studentsID || 0;
+    constructor(saiObj: any){
+        this.studentsID = saiObj.studentsID || '';
         this.classID = saiObj.classID || 0;
         this.completed = saiObj.completed || false;
         this.question1 = saiObj.question1 || '';

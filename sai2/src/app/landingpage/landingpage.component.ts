@@ -16,7 +16,7 @@ export class LandingpageComponent implements OnInit {
   ngOnDestroy(): void {
   }
   ngOnInit(): void {
-    this.authService.afAuth.signOut();
+    
   }
 
 }

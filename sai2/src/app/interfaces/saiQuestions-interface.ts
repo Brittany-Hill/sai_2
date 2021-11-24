@@ -1,7 +1,7 @@
 
 export interface SaiQuestionsInterface {
     completed: boolean;
-    studentsID: number;
+    studentsID: string;
     classID: number;
     question1: string;
     question2: string;

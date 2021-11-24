@@ -4,17 +4,20 @@ import { saiQuestions } from 'src/classes/saiQuestions.model';
 import { SaiQuestionsService } from 'src/services/sai-questions.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/services/auth.service';
+import { UserService } from 'src/services/user-service.service';
 @Component({
   selector: 'app-evaluate-course',
   templateUrl: './evaluate-course.component.html',
   styleUrls: ['./evaluate-course.component.css']
 })
 export class EvaluateCourseComponent implements OnInit {
+  id: string | undefined;
   constructor(public saiQuestionsService: SaiQuestionsService, 
               public router: Router,
-              public authService: AuthenticationService) {
+              public authService: AuthenticationService,
+              public userService: UserService) {
               }
-
+              
    courseForm: FormGroup= new FormGroup({
     question1: new FormControl(null),
     question2: new FormControl(null),
@@ -27,11 +30,13 @@ export class EvaluateCourseComponent implements OnInit {
   })
 
   ngOnInit(): void {
-
+    this.userService.user$.subscribe(user => {
+      this.id = user?.uid;
+    })
   }
   onSubmit(): void{
     var tempSai = new saiQuestions({
-      studentsID: 96019,
+      studentsID: this.id,
       classID:2050,
       completed: true,
       question1: this.courseForm.get("question1")?.value,

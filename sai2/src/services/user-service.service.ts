@@ -16,7 +16,6 @@ import { switchMap } from 'rxjs/operators';
 export class UserService {
 
   user$: Observable<User| null | undefined>;
-
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -27,7 +26,7 @@ export class UserService {
         switchMap(user => {
             // Logged in
           if (user) {
-            return this.afs.doc<User | null>(`student/${user.uid}`).valueChanges();
+            return this.afs.doc<User>(`student/${user.uid}`).valueChanges();
           } else {
             // Logged out
             return of(null);
@@ -51,7 +50,6 @@ export class UserService {
   private updateUserData(user: any) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`student/${user.uid}`);
-
     return userRef.set({
       uid: user.uid,
       email: user.email,
