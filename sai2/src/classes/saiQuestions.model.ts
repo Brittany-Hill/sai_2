@@ -24,4 +24,5 @@ export class saiQuestions{
         this.question6 = saiObj.question6 || '';
         this.question7 = saiObj.question7 || '';
     }
+    
 }

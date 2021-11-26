@@ -35,6 +35,8 @@ export class EvaluateCourseComponent implements OnInit {
     })
   }
   onSubmit(): void{
+
+    console.log(this.id)
     var tempSai = new saiQuestions({
       studentsID: this.id,
       classID:2050,
@@ -49,6 +51,7 @@ export class EvaluateCourseComponent implements OnInit {
     }
     )
     this.saiQuestionsService.createNewAnswers(tempSai);
+    console.log(this.id)
     this.router.navigate(["/signedin"])
   }
 }
