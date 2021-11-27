@@ -23,4 +23,29 @@ describe('Create accurate SAI', () => {
         expect(questions1.completed).toBeFalsy();
         expect(questions2.completed).toBeTruthy();
     })
+
+    test('Question 1 is set correctly', () => {
+        expect(questions1.question1).toEqual('Is question 1 set?');
+        expect(questions2.question1).toEqual('Is question 1 set?');
+    })
+
+    test('Question 2 is set correctly', () => {
+        expect(questions1.question2).toEqual('Is question 2 set?');
+        expect(questions2.question2).toEqual('Is question 2 set?');
+    })
+
+    test('Question 3 is set correctly', () => {
+        expect(questions1.question3).toEqual('Is question 3 set?');
+        expect(questions2.question3).toEqual('Is question 3 set?');
+    })
+
+    test('Question 4 is set correctly', () => {
+        expect(questions1.question4).toEqual('Is question 4 set?');
+        expect(questions2.question4).toEqual('Is question 4 set?');
+    })
+
+    test('Question 5 is set correctly', () => {
+        expect(questions1.question5).toEqual('Is question 5 set?');
+        expect(questions2.question5).toEqual('Is question 5 set?');
+    })
 })

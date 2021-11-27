@@ -15,7 +15,6 @@ import { EvaluateFacilityComponent } from './evaluate-facility/evaluate-facility
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SigninpageComponent } from './signinpage/signinpage.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { TeacherViewComponent } from './teacher-view/teacher-view.component';
 import { TeacherSaiViewComponent } from './teacher-sai-view/teacher-sai-view.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,7 +32,6 @@ import { TeacherViewCardComponent } from './teacher-view-card/teacher-view-card.
     LandingpageComponent,
     SigninpageComponent,
     ToolbarComponent,
-    LandingPageComponent,
     TeacherViewComponent,
     TeacherSaiViewComponent,
     TeacherViewCardComponent
