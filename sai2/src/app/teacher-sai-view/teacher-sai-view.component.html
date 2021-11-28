@@ -1,11 +1,32 @@
-<mat-grid-list cols='7' rowHeight= "1:2" class="rounded">
+<mat-grid-list cols='7' rowHeight= "1:1" class="rounded">
     <mat-grid-tile class="rounded" colspan='7'>Results for {{courseName}}</mat-grid-tile>
-    <mat-grid-tile style="text-align: center;">What topics should have been explained in more depth?</mat-grid-tile>
-    <mat-grid-tile style="text-align: center;">What topics should have been omitted or shortened?</mat-grid-tile>
-    <mat-grid-tile style="text-align: center;">What other methods of instruction would you suggest? (Lectures, Videos, Projects, etc)</mat-grid-tile>
-    <mat-grid-tile style="text-align: center;">What other methods of presentation or visuals would you suggest?</mat-grid-tile>
-    <mat-grid-tile style="text-align: center;">What methods of communication would you suggest moving forward? (Discord, Slack, etc.)</mat-grid-tile>
-    <mat-grid-tile style="text-align: center;">What would you like your instructor to do less? (Example: Show less powerpoint and more examples)</mat-grid-tile>
-    <mat-grid-tile style="text-align: center;">What would you suggest your instructor do more of? (Example: More Examples with detailed explantions)</mat-grid-tile>
-    <mat-grid-tile *ngFor="let answer of answers">{{answer}}</mat-grid-tile>
+    <mat-grid-tile  style="text-align: center;">
+        <mat-grid-tile-header>Question 1</mat-grid-tile-header>
+        What topics should have been explained in more depth?
+    </mat-grid-tile>
+    <mat-grid-tile  style="text-align: center;">
+        <mat-grid-tile-header>Question 2</mat-grid-tile-header>
+        What topics should have been omitted or shortened?
+    </mat-grid-tile>
+    <mat-grid-tile  style="text-align: center;">
+        <mat-grid-tile-header>Question 3</mat-grid-tile-header>
+        What other methods of instruction would you suggest? (Lectures, Videos, Projects, etc)
+    </mat-grid-tile>
+    <mat-grid-tile  style="text-align: center;">
+        <mat-grid-tile-header>Question 4</mat-grid-tile-header>
+        What other methods of presentation or visuals would you suggest?
+    </mat-grid-tile>
+    <mat-grid-tile  style="text-align: center;">
+        <mat-grid-tile-header>Question 5</mat-grid-tile-header>
+        What methods of communication would you suggest moving forward? (Discord, Slack, etc.)
+    </mat-grid-tile>
+    <mat-grid-tile  style="text-align: center;">
+        <mat-grid-tile-header>Question 6</mat-grid-tile-header>
+        What would you like your instructor to do less? (Example: Show less powerpoint and more examples)
+    </mat-grid-tile>
+    <mat-grid-tile  style="text-align: center;">
+        <mat-grid-tile-header>Question 7</mat-grid-tile-header>
+        What would you suggest your instructor do more of? (Example: More Examples with detailed explantions)
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="1" *ngFor="let answer of answers">{{answer}}</mat-grid-tile>
 </mat-grid-list>
