@@ -24,7 +24,7 @@ import { SigninpageComponent } from './signinpage/signinpage.component';
     EvaluateCourseComponent,
     EvaluateFacilityComponent,
     LandingpageComponent,
-    SigninpageComponent
+    SigninpageComponent,
     ],
   imports: [
     BrowserModule,

@@ -21,8 +21,11 @@ export class SigninpageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.userSubscription = this.userService.user$.subscribe( user => {
-      if (user) {
+      if (user?.email == "capstonestudenttest@gmail.com") {
         this.router.navigate(['signedin']);
+      }
+      else if(user?.email == "capstoneteachertest@gmail.com"){
+        this.router.navigate(['tearcherview']);
       }
     });
   }
