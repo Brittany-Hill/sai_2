@@ -16,7 +16,6 @@ import { switchMap } from 'rxjs/operators';
 export class UserService {
 
   user$: Observable<User| null | undefined>;
-
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -40,7 +39,7 @@ export class UserService {
   async googleSignin() {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    this.updateUserData(credential)
+    return this.updateUserData(credential.user)
   }
 
   /** Signs the user out of Google */
@@ -48,13 +47,13 @@ export class UserService {
     await this.afAuth.signOut();
     this.router.navigate(['/landingpage']);
   }
-  private updateUserData(user: { additionalUserInfo?: firebase.auth.AdditionalUserInfo | null | undefined; credential?: firebase.auth.AuthCredential | null; operationType?: string | null | undefined; user?: firebase.User | null; uid?: any; email?: any; displayName?: any; }) {
+  private updateUserData(user: any) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`student/${user.uid}`);
-
     return userRef.set({
       uid: user.uid,
       email: user.email,
+      displayName: user.displayName
     }, { merge: true });
 
   }

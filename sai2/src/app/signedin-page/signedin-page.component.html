@@ -1,6 +1,7 @@
 <div class="header">
     <h1>Pick a course to evaluate</h1>
-  </div>
+</div>
+
   <div class="card-div">
     <div class="card">
         <div class="card-header">
@@ -9,7 +10,7 @@
         <div class="card-body">
           <h5 class="card-title">CEN3031 Software Engineering I</h5>
           <p class="card-text">Professor Name: Brian Eddy</p>
-          <a href="/evaluate-course" class="btn btn-primary">Evaluate Course</a>
+          <button (click)='evaluateCourse("cen3031")' class="btn btn-primary">Evaluate Course</button>
           <a href="/evaluate-facility" class="btn btn-primary">Evaluate Facility</a>
         </div>
     </div>
@@ -20,7 +21,7 @@
       <div class="card-body">
         <h5 class="card-title">COP3530 Data Structures and Algorithms</h5>
         <p class="card-text">Professor Name: Steve Bitner</p>
-        <a href="/evaluate-course" class="btn btn-primary">Evaluate Course</a>
+        <button (click)='evaluateCourse("cop3530")' class="btn btn-primary">Evaluate Course</button>
         <a href="/evaluate-facility" class="btn btn-primary">Evaluate Facility</a>
       </div>
     </div>
@@ -31,16 +32,9 @@
       <div class="card-body">
         <h5 class="card-title">CIS4595 Capstone Project</h5>
         <p class="card-text">Professor Name: Bernd Owsnicki-Klewe</p>
-        <a href="/evaluate-course" class="btn btn-primary">Evaluate Course</a>
+        <button (click)='evaluateCourse("cis4595")' class="btn btn-primary">Evaluate Course</button>
         <a href="/evaluate-facility" class="btn btn-primary">Evaluate Facility</a>
       </div>
     </div>
   </div>
-<!--<div>
-  <tr *ngFor="let student of holder | async">
-    <td>{{student.firstName}}</td>
-    <td>{{student.lastName}}</td>
-    <td>{{student.classes}}</td>
-</tr>
-</div>
--->
+

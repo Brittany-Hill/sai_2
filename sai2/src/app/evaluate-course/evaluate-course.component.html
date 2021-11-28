@@ -1,147 +1,128 @@
 <div class="header">
-    <h1>Evaluate Course</h1>
+  <h1>Evaluate Course</h1>
 </div>
 <div>
-<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
-  <div class="card-div">
-    <div class="card">
+  <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+    <div class="card-div">
+      <div class="card">
         <div class="card-header">
-          Grade Anticipation
+          Question 1
         </div>
         <div class="card-body">
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">What do you anticipate your grade will be?</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioA-1" value="A">
-                <label class="form-check-label" for="radioA-1">A</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioB-1" value="B">
-                <label class="form-check-label" for="radioB-1">B</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioC-1" value="C">
-                <label class="form-check-label" for="radioC-1">C</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioD-1" value="D">
-                <label class="form-check-label" for="radioD-1">D</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="anticipated" id="radioF-1" value="F">
-                <label class="form-check-label" for="radioF-1">F</label>
-              </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">What topics should have been explained in more depth?</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="question1" style="height: 100px"
+              formControlName="question1" maxlength="200"></textarea>
+            <label for="floatingTextarea2">Type your comment here: Max characters: 200 </label>
+          </div>
         </div>
-    </div>
-    <div class="card">
+      </div>
+
+
+      <div class="card">
         <div class="card-header">
-          Learning Environment
+          Question 2
         </div>
         <div class="card-body">
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">The learning environment was good enough to help me understand the material.</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="learning" id="radioStronglyAgree" value="strongAgree" >
-                <label class="form-check-label" for="radioStronglyAgree">Strongly Agree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="learning" id="radioAgree" value="agree">
-                <label class="form-check-label" for="radioAgree">Agree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="learning" id="radioNeutral" value="neurtal">
-                <label class="form-check-label" for="radioNeutral">Neutral</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="learning" id="radioDisagree" value="disagree">
-                <label class="form-check-label" for="radioDisagree">Disagree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="learning" id="radioStronglyDisagree" value="strongDisagree">
-                <label class="form-check-label" for="radioStronglyDisagree">Strongly Disagree</label>
-              </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">What topics should have been omitted or shortened?</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="question2" style="height: 100px"
+              formControlName="question2" maxlength="200"></textarea>
+            <label for="floatingTextarea2">Type your comment here: Max characters: 200 </label>
+          </div>
         </div>
-    </div>
-    <div class="card">
+      </div>
+      <div class="card">
         <div class="card-header">
-          Grading Material
+          Question 3
         </div>
         <div class="card-body">
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">The professor graded material in a timely manner.</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="grading" id="radioStronglyAgree" value="strongAgree" >
-                <label class="form-check-label" for="radioStronglyAgree">Strongly Agree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="grading" id="radioAgree" value="agree" >
-                <label class="form-check-label" for="radioAgree">Agree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="grading" id="radioNeutral" value="neurtal" >
-                <label class="form-check-label" for="radioNeutral">Neutral</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="grading" id="radioDisagree" value="disagree" >
-                <label class="form-check-label" for="radioDisagree">Disagree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="grading" id="radioStronglyDisagree" value="strongDisagree" >
-                <label class="form-check-label" for="radioStronglyDisagree">Strongly Disagree</label>
-              </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">What other methods of instruction would you suggest? (Lectures, Videos, Projects, etc)</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="question3" style="height: 100px"
+              formControlName="question3" maxlength="200"></textarea>
+            <label for="floatingTextarea2">Type your comment here: Max characters: 200 </label>
+          </div>
         </div>
-    </div>
-    <div class="card">
+      </div>
+
+
+      <div class="card">
         <div class="card-header">
-          Helpfulness
+          Question 4
         </div>
         <div class="card-body">
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">The professor was helpful and understanding of students' questions and concerns.</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="helpful" id="radioStronglyAgree" value="strongAgree" >
-                <label class="form-check-label" for="radioStronglyAgree">Strongly Agree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="helpful" id="radioAgree" value="agree" >
-                <label class="form-check-label" for="radioAgree">Agree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="helpful" id="radioNeutral" value="neurtal" >
-                <label class="form-check-label" for="radioNeutral">Neutral</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="helpful" id="radioDisagree" value="disagree" >
-                <label class="form-check-label" for="radioDisagree">Disagree</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" formControlName="helpful" id="radioStronglyDisagree" value="strongDisagree" >
-                <label class="form-check-label" for="radioStronglyDisagree">Strongly Disagree</label>
-              </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">What other methods of presentation or visuals would you suggest?</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="question4" style="height: 100px"
+              formControlName="question4" maxlength="200"></textarea>
+            <label for="floatingTextarea2">Type your comment here: Max characters: 200 </label>
+          </div>
         </div>
-    </div>
-    <div class="card">
+      </div>
+
+
+      <div class="card">
         <div class="card-header">
-          Overall Opinion
+          Question 5
         </div>
         <div class="card-body">
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Please provide any additional comments about the professor or learning environment to help us get a better evaluation of this course.</label>
-            </div>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="feedback" style="height: 100px" formControlName="feedback" maxlength="200"></textarea>
-                <label for="floatingTextarea2">Type your comment here: Max characters: 200 </label>
-              </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">What methods of communication would you suggest moving forward? (Discord, Slack, etc.)</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="question5" style="height: 100px"
+              formControlName="question5" maxlength="200"></textarea>
+            <label for="floatingTextarea2">Type your comment here: Max characters: 200 </label>
+          </div>
         </div>
-    </div>
-    <div id="submit">
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Question 6
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">What would you like your instructor to do less? (Example: Show less powerpoint and more examples)</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="question6" style="height: 100px"
+              formControlName="question6" maxlength="200"></textarea>
+            <label for="floatingTextarea2">Type your comment here: Max characters: 200 </label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header">
+          Question 7
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">What would you suggest your instructor do more of? (Example: More Examples with detailed explantions)</label>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="question7" style="height: 100px"
+              formControlName="question7" maxlength="200"></textarea>
+            <label for="floatingTextarea2">Type your comment here: Max characters: 200 </label>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="submit">
         <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
     </div>
-  </div>
   </form>
 </div>
-

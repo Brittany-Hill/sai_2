@@ -13,23 +13,22 @@ import { StudentService } from 'src/services/student.service';
 })
 export class SignedinPageComponent implements OnInit {
   public holder!: Observable<Student[]>;
-
   constructor(private db: AngularFirestore,
-              public studentService: StudentService, 
-              public authService: AuthenticationService,
-              public router: Router) { }
+    public studentService: StudentService,
+    public authService: AuthenticationService,
+    public router: Router) { }
 
   ngOnInit(): void {
-    if(this.authService.isUserEmailLoggedIn){
     this.db.collection('student').valueChanges().subscribe(val => console.log(val));
-    this.studentService.student$.subscribe( stud => {
+    this.studentService.student$.subscribe(stud => {
       this.holder = this.studentService.getAllStudents();
     }
     )
-  }else{
-    this.router.navigate(["/landingpage"])
-  }
+
   }
   ngOnDestroy(): void {
+  }
+  evaluateCourse(id: string){
+    this.router.navigate(['/evaluate-course',{class: id}])
   }
 }
