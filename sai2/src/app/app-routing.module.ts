@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EvaluateCourseComponent } from './evaluate-course/evaluate-course.component';
 import { EvaluateFacilityComponent } from './evaluate-facility/evaluate-facility.component';
@@ -6,8 +6,13 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SignedinPageComponent } from './signedin-page/signedin-page.component';
 import { TestDatabaseComponent } from './test-database/test-database.component';
 import { SigninpageComponent } from './signinpage/signinpage.component';
+<<<<<<< HEAD
 import { UserService } from 'src/services/user-service.service';
 import { AuthenticationService } from 'src/services/auth.service';
+=======
+import { TeacherViewComponent } from './teacher-view/teacher-view.component';
+import { TeacherSaiViewComponent } from './teacher-sai-view/teacher-sai-view.component';
+>>>>>>> origin
 const routes: Routes = [
   {path: '', redirectTo: 'landingpage', pathMatch: 'full'},
   {path: 'test', component: TestDatabaseComponent},
@@ -16,7 +21,9 @@ const routes: Routes = [
   {path: 'evaluate-facility', component: EvaluateFacilityComponent,canActivate: [AuthenticationService]},
   {path: 'landingpage', component: LandingpageComponent},
   {path: '*/*', redirectTo: 'landingpage'},
-  {path: 'signinpage', component: SigninpageComponent},
+  {path: 'teacher-view', component: TeacherViewComponent},
+  {path: 'teacher-sai-view', component: TeacherSaiViewComponent},
+  {path: 'signinpage', component: SigninpageComponent}
 ];
 
 @NgModule({
