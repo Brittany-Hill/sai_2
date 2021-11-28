@@ -6,13 +6,9 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SignedinPageComponent } from './signedin-page/signedin-page.component';
 import { TestDatabaseComponent } from './test-database/test-database.component';
 import { SigninpageComponent } from './signinpage/signinpage.component';
-<<<<<<< HEAD
-import { UserService } from 'src/services/user-service.service';
 import { AuthenticationService } from 'src/services/auth.service';
-=======
 import { TeacherViewComponent } from './teacher-view/teacher-view.component';
 import { TeacherSaiViewComponent } from './teacher-sai-view/teacher-sai-view.component';
->>>>>>> origin
 const routes: Routes = [
   {path: '', redirectTo: 'landingpage', pathMatch: 'full'},
   {path: 'test', component: TestDatabaseComponent},

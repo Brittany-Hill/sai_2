@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule  } from '@angular/forms';
 import { saiQuestions } from 'src/classes/saiQuestions.model';
 import { SaiQuestionsService } from 'src/services/sai-questions.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/services/auth.service';
 import { UserService } from 'src/services/user-service.service';
 @Component({
@@ -12,8 +12,11 @@ import { UserService } from 'src/services/user-service.service';
 })
 export class EvaluateCourseComponent implements OnInit {
   id: string | undefined;
+  classid: string | null | undefined;
+  
   constructor(public saiQuestionsService: SaiQuestionsService, 
               public router: Router,
+              public route: ActivatedRoute,
               public authService: AuthenticationService,
               public userService: UserService) {
               }
@@ -30,6 +33,8 @@ export class EvaluateCourseComponent implements OnInit {
   })
 
   ngOnInit(): void {
+    this.classid = this.route.snapshot.paramMap.get('class');
+    console.log(this.classid);
     this.userService.user$.subscribe(user => {
       this.id = user?.uid;
     })
@@ -39,7 +44,7 @@ export class EvaluateCourseComponent implements OnInit {
     console.log(this.id)
     var tempSai = new saiQuestions({
       studentsID: this.id,
-      classID:2050,
+      classID: this.classid,
       completed: true,
       question1: this.courseForm.get("question1")?.value,
       question2: this.courseForm.get("question2")?.value,

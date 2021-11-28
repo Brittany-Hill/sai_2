@@ -25,7 +25,7 @@ export class SigninpageComponent implements OnInit {
         this.router.navigate(['signedin']);
       }
       else if(user?.email == "capstoneteachertest@gmail.com"){
-        this.router.navigate(['tearcherview']);
+        this.router.navigate(['teacher-view']);
       }
     });
   }

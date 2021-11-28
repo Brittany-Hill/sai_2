@@ -17,31 +17,6 @@ export class FacilityService {
   getAllQuestions(){
     return this.facilityQuestions$;
   }
-  getQuestion1() {
-    var temp = this.firestore.collection<Facility>('facilityQuestions',
-      ref => ref.where('question1', '!=', '')).valueChanges();
-    return temp;
-  }
-  getQuestion2() {
-    var temp = this.firestore.collection<Facility>('facilityQuestions',
-      ref => ref.where('question2', '!=', '')).valueChanges();
-    return temp;
-  }
-  getQuestion3() {
-    var temp = this.firestore.collection<Facility>('facilityQuestions',
-      ref => ref.where('question3', '!=', '')).valueChanges();
-    return temp;
-  }
-  getQuestion4() {
-    var temp = this.firestore.collection<Facility>('facilityQuestions',
-      ref => ref.where('question4', '!=', '')).valueChanges();
-    return temp;
-  }
-  getQuestion5() {
-    var temp = this.firestore.collection<Facility>('facilityQuestions',
-      ref => ref.where('question5', '!=', '')).valueChanges();
-    return temp;
-  }
   createNewAnswers(answers: Facility) :void{
     this.facilityCollectionRef.add({
       studentsID: answers.studentsID,
