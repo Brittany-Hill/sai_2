@@ -26,6 +26,5 @@ export class FacilityService {
       question4: answers.question4,
       question5: answers.question5
     });
-
-}
+  }
 }
