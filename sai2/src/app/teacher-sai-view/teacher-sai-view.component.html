@@ -1,12 +1,9 @@
-<mat-grid-list cols="10" rowHeight= "1:1">
-    <mat-grid-tile>Course:<br> {{courseSAI.getCourseName()}}</mat-grid-tile>
+<mat-grid-list cols='5' rowHeight= "3:1" class="rounded">
+    <mat-grid-tile class="rounded" colspan='5'>Results for {{courseName}}</mat-grid-tile>
     <mat-grid-tile>Question 1</mat-grid-tile>
     <mat-grid-tile>Question 2</mat-grid-tile>
     <mat-grid-tile>Question 3</mat-grid-tile>
     <mat-grid-tile>Question 4</mat-grid-tile>
     <mat-grid-tile>Question 5</mat-grid-tile>
-    <mat-grid-tile>Question 6</mat-grid-tile>
-    <mat-grid-tile>Question 7</mat-grid-tile>
-    <mat-grid-tile>Question 8</mat-grid-tile>
-    <mat-grid-tile>Question 9</mat-grid-tile>
+    <mat-grid-tile *ngFor="let answer of answers">{{answer}}</mat-grid-tile>
 </mat-grid-list>
