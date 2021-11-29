@@ -19,6 +19,7 @@ export class SaiQuestionsService {
   getAllQuestions(){
     return this.questions$;
   }
+  
   createNewAnswers(answers: saiQuestions) :void{
     this.questionCollectionRef.add({
       studentsID: answers.studentsID,
@@ -28,7 +29,9 @@ export class SaiQuestionsService {
       question2: answers.question2,
       question3: answers.question3,
       question4: answers.question4,
-      question5: answers.question5
+      question5: answers.question5,
+      question6: answers.question6,
+      question7: answers.question7
     });
 
   }
