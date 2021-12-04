@@ -1,6 +1,6 @@
 # SAI 2.0
 
-## Overview of Submission Strucutre
+## Overview of Submission Structure
 
 ### Project Report
 final-submissions/project-report/project-report.pdf: Project Report
